@@ -47,3 +47,55 @@ const juanita = new Student(
         "Creación de Personajes",
     ],
 );
+
+//Prototipos con la sintaxis de Clases
+class Student2 {
+    //Este es el método que se ejecuta, básicamente cuando llammeos a los parentesisi al crear nuestra instancia de clase.
+    //this. en este caso ara referencia a nuestra clase prototipo Student2
+    constructor(name, age, cursosAprobados) {
+        this.name = name;
+        this.age = age;
+        this.cursosAprobados = cursosAprobados;
+    }
+
+    aprobarCurso(nuevoCursito) {
+        this.cursosAprobados.push(nuevoCursito);
+    }
+}; 
+
+
+const miguelito = new Student2(
+    "Miguel",
+    28,
+    [
+        "Cursos de Análisis de Negocios para Ciencia de Datos",
+        "Principios de Visualización de Datos para BI",
+    ],
+);
+
+//sintaxis mejorada 
+class Student2 {
+    constructor({
+        name, 
+        age, 
+        cursosAprobados,
+    }) {
+        this.name = name;
+        this.age = age;
+        this.cursosAprobados = cursosAprobados;
+    }
+
+    aprobarCurso(nuevoCursito) {
+        this.cursosAprobados.push(nuevoCursito);
+    }
+}; 
+
+
+const miguelito = new Student2({
+    name: "Miguel",
+    age: 28,
+    cursosAprobados: [
+        "Cursos de Análisis de Negocios para Ciencia de Datos",
+        "Principios de Visualización de Datos para BI",
+    ],
+});
