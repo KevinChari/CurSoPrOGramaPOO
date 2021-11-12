@@ -1,3 +1,5 @@
+
+// Reto de Clase
 class LearningPaths {
     constructor({
         name,
@@ -12,12 +14,25 @@ class LearningPaths {
         this.courseNumbers = courseNumbers;
         this.percentage = percentage;
     }
-}
+    addCourse(newCourse){
+        this.courses.push(newCourse);
+    };
+};
 
-const escuelaWeb = new LearningPaths(); 
+const escuelaWeb = new LearningPaths({
+    name:"Escuela desarrollo Web",
+    courses: [
+        "Curso Definitivo de HTML y CSS",
+        "Curso Práctico de HTML y CSS",
+        "Curso de Responsive Desing",
+    ],
+    difficulty: "Básico",
+    courseNumbers: 106,
+}); 
 const escuelaData = new LearningPaths(); 
 const escuelaVideJuegos = new LearningPaths(); 
 
+//Parctico
 
 class Student {
     constructor({
