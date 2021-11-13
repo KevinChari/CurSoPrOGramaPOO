@@ -99,3 +99,30 @@ const miguelito = new Student2({
         "Principios de Visualización de Datos para BI",
     ],
 });
+
+
+let errorNames = [
+    "El Curso es Malo",
+    "Curso Malito de Programación",
+    "Curso Difícl de Programación",
+    "Curso Imposible de Programación",
+];
+
+function SintaxisPrototype(value1, value2) {
+    this._value1 = value1;
+    this.value2 = value2;
+}
+
+SintaxisPrototype.prototype = {
+    get value1(){
+        return this._value1;
+    },
+    set value1(addNewName){
+        if(addNewName === errorNames) {
+            console.error("Tranquilizate Maquinola");
+        } else {
+            this._value1 = addNewName;
+        }
+    }
+    
+}
