@@ -1,36 +1,58 @@
+class Course {
+    constructor({
+        name, 
+        classes = [],
+    }){
+        this.name = name;
+        this.classes = classes;
+    }; 
+} 
 
-// Reto de Clase
+const cursoProgBasica = new Course({
+    name: "Curso Gratis de Programación Básica",
+});
+const cursoDefinitivoHTML = new Course({
+    name: "Curso Definitivo de HTML y CSS",
+});
+const cursoPracticoHTML = new Course({
+    name: "Curso Práctico de HTML y CSS",
+});
+
+
 class LearningPaths {
     constructor({
-        name,
+        name, 
         courses = [],
-        difficulty,
-        courseNumbers,
-        percentage = undefined,
-    }) {
+    }){
         this.name = name;
         this.courses = courses;
-        this.difficulty = difficulty;
-        this.courseNumbers = courseNumbers;
-        this.percentage = percentage;
-    }
-    addCourse(newCourse){
-        this.courses.push(newCourse);
     };
 };
 
 const escuelaWeb = new LearningPaths({
-    name:"Escuela desarrollo Web",
+    name: "Escuela de Desarrolo Web",
     courses: [
-        "Curso Definitivo de HTML y CSS",
-        "Curso Práctico de HTML y CSS",
-        "Curso de Responsive Desing",
+        cursoProgBasica,
+        cursoDefinitivoHTML,
+        cursoPracticoHTML,
     ],
-    difficulty: "Básico",
-    courseNumbers: 106,
 }); 
-const escuelaData = new LearningPaths(); 
-const escuelaVideJuegos = new LearningPaths(); 
+const escuelaData = new LearningPaths({
+    name: "Escuela de Data Science",
+    courses: [
+        cursoProgBasica,
+        "Curso Data Business",
+        "Curso Dataviz",
+    ],
+}); 
+const escuelaVideJuegos = new LearningPaths({
+    name: "Escuela de Video Juegos",
+    courses: [
+        cursoProgBasica,
+        "Curso de Unity",
+        "Curso de Unreal",
+    ],
+}); 
 
 //Parctico
 
